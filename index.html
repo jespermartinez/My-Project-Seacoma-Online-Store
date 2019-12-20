@@ -35,9 +35,9 @@
                         <a href=""><i class="fas fa-question-circle"></i></a>
                         <a href=""><p>Help</p></a>
                         <a href=""><p>|</p></a>
-                        <a href=""><p>Sign-up</p></a>
+                        <a class="signup_btn" href="#"><p>Sign-up</p></a>
                         <a href=""><p>|</p></a>
-                        <a href=""><p>Login</p></a>
+                        <a class="login_btn" href="#"><p>Login</p></a>
                     </div>
                 </div>
             </div>
@@ -86,14 +86,14 @@
                 </div>
             </div>    
         </div>
-        <div class="container">
-            <div class="mobile_icon_case">
-                <img src="img/Logo.png" alt="">
-            </div>
+        <div class="mobile_icon_case">
+            <img src="img/Logo.png" alt="">
         </div>
     </section>
 
-    <section class="sec_1_case">
+<!-- Body -->    
+
+    <section class="sec_1_case" id="sec_1_banner_home">
         <div class="container">
             <div class="main_case">
                 <div class="sec_1_box_image_left">
@@ -690,6 +690,8 @@
         </div>
     </section>
 
+<!-- Footer -->
+
     <footer>
         <div class="container">
             <div class="body_case">
@@ -748,10 +750,62 @@
         </div>
     </footer>
 
+<!-- Top Button -->
+
+    <section class="sec_go_to_top">
+        <a class="scroll" href="#sec_1_banner_home">
+            <div class="circle_case">
+                <i class="fas fa-angle-double-up"></i>
+            </div>
+        </a>
+    </section>
+
+<!-- Login Form -->
+
+    <section class="sec_login">
+        <div class="container">
+            <div class="case_body">
+                <h2>Login</h2>
+                <input type="text" placeholder="E-mail">
+                <input type="password" placeholder="Password">
+                <div class="case_forgot">
+                    <a class="create_account" href="#">Create an account</a>
+                    <a class="forgot" href="">Forgot your password?</a>
+                </div>
+                <button class="login"><i class="fas fa-sign-in-alt"></i><span>LOGIN</span></button>
+                <button class="cancel_login"><i class="fas fa-window-close"></i><span>CANCEL</span></button>
+                <button class="facebook"><i class="fab fa-facebook"></i><span>LOGIN WITH FACEBOOK</span></button>
+                <button class="google"><i class="fab fa-google-plus-square"></i><span>LOGIN WITH GOOGLE</span></button>
+            </div>
+        </div>
+    </section>
+
+<!-- Sign-up Form -->
+
+    <section class="sec_sign_up">
+        <div class="container">
+            <div class="case_body">
+                <h2>Sign-up</h2>
+                <input type="text" placeholder="E-mail">
+                <input type="text" placeholder="Username">
+                <input type="password" placeholder="Password">
+                <div class="case_forgot">
+                    <p>By signing up, you agree to Seacoma's <a class="terms" href="">Terms of Service </a> & <a class="privacy" href=""> Privacy Policy</a></p>
+                </div>
+                <button class="signup"><i class="fas fa-user-plus"></i><span>SIGN UP</span></button>
+                <button class="cancel_signup"><i class="fas fa-window-close"></i><span>CANCEL</span></button>
+                <button class="facebook"><i class="fab fa-facebook"></i><span>REGISTER WITH FACEBOOK</span></button>
+                <button class="google"><i class="fab fa-google-plus-square"></i><span>REGISTER WITH GOOGLE</span></button>
+            </div>
+        </div>
+    </section>    
+
 
 
     <script src="js/swiper.min.js"></script>
     <script src="js/slides_script.js"></script>
+    <script src="js/main.js"></script>
+
     
 </body>
 </html>

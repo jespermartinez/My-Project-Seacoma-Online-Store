@@ -30,6 +30,13 @@
     header .f_layer_main_case .f_layer_header .right_box a i{margin-top:18px;margin-left:10px;transition:.5s ease;}
     header .f_layer_main_case .f_layer_header .right_box a i:hover,
     header .f_layer_main_case .f_layer_header .right_box a:hover{color:#FB0131;transition:.5s ease;} 
+    /* Active Header */
+    @keyframes header_1_animation{
+        0%{transform:translateY(-200px);opacity:.8;}
+        100%{transform:translateY(0);}
+    }
+    header.active{position:fixed;top:0;z-index:15000;margin:auto;width:100%;box-shadow:#adadad 0 1px 4px;animation:header_1_animation 1s ease;}
+
 
     header .sec_layer_header{display:flex;padding:5px 0 0 0;}
     header .sec_layer_header .image_case img{height:65px;margin-top:10px;display:block;}
@@ -52,8 +59,10 @@
     .mobile_header .main_case .cart_case i,
     .mobile_header .main_case .log_case i{color:#ffffff;}
 
-    .mobile_header .mobile_icon_case{text-align:center;padding:10px;}
+    .mobile_header .mobile_icon_case{text-align:center;padding:10px;background:#f1f1f1;}
     .mobile_header .mobile_icon_case img{height:80px;margin-left:-25px;}
+
+    .mobile_header.active{position:fixed;top:0;width:100%;z-index:15000;animation:header_1_animation 1s ease;box-shadow:#adadad 0 1px 4px;}
 
 /* Section 1 */    
 
@@ -99,7 +108,7 @@
 /* Section 5 */
 
     .sec_5_home{margin-top:25px;color:#333333;} 
-    .sec_5_home .header_case{background:#ffffff;padding:5px 20px 5px 20px;border-bottom:#194CC9 2px solid;display:flex;justify-content:space-between;}
+    .sec_5_home .header_case{background:#ffffff;padding:5px 20px 5px 20px;border-bottom:#FB0131 3px solid;display:flex;justify-content:space-between;}
     .sec_5_home .header_case a{margin-top:22px;color:#FB0131;text-decoration:none;}
 
     .sec_5_home .case_body{display:flex;justify-content:space-between;}
@@ -118,10 +127,8 @@
 
     .case_see_more{text-align:center;margin-top:30px;}
     .case_see_more button{padding:10px 80px 10px 80px;background:#FB0131;border:0;color:#ffffff;position:relative;}
-    .case_see_more button:after{content:"";height:100%;width:0;position:absolute;background:#194CC9;left:0;transition:.5s ease;top:0;}
-    .case_see_more button:hover:after{width:100%;transition:.5s ease;}
-    .case_see_more button span{position:relative;z-index:1;}
-
+    .case_see_more button:hover{background:#e90a37;transition:.5s ease;}
+    
 /* Section 6 */
 
     .sec_6_home{margin-top:25px;color:#333333;} 
@@ -158,6 +165,71 @@
     footer .bottom_case{border-top:#9b9b9b 1px solid;margin-top:30px;text-align:center;}
     footer .bottom_case a{text-align:center;margin-top:30px;display:block;text-decoration:none;color:#cacaca;}
 
+/* Top Button Process */ 
+    @keyframes go_to_top_animation{
+        0%{transform:translateY(200px);opacity:.8;}
+        100%{transform:translateY(0);}
+    }
+    .sec_go_to_top.active{animation:go_to_top_animation 1s ease;display:block;}
+    .sec_go_to_top{position:fixed;bottom:15px;right:15px;display:none;}
+    .sec_go_to_top .circle_case{height:40px;width:40px;background:#f1f1f1;border-radius:50%;text-align:center;border:#194CC9 1px solid;box-shadow:#333333 0 1px 3px;}
+    .sec_go_to_top .circle_case i{line-height:40px;color:#FB0131;transition:.5s ease;transform:scale(1.1);}
+    .sec_go_to_top .circle_case:hover i{transform:scale(1.5);transition:.5s ease;}
+
+/* Login */
+
+    @keyframes login_animation_open{
+        0%{transform:scale(.2);}
+        50%{transform:scale(1.1);}
+        75%{transform:scale(.9);}
+        100%{transform:scale(1);}
+    }
+    .sec_login.active{display:block;}
+    .sec_login{position:fixed;top:0;width:100%;z-index:18000;height:100%;background:rgb(0, 0, 0, .6);display:none;}
+    .sec_login .case_body{height:auto;background:#f3f3f3;width:30%;margin:auto;padding:20px 40px 30px 40px;margin-top:100px;border-radius:10px;animation:login_animation_open .5s ease;margin-bottom:50px;} 
+    .sec_login .case_body h2{text-align:center;margin:0;color:#FB0131;}
+    .sec_login .case_body input[type="text"]{width:100%;margin-top:40px;background:transparent;border:0;border-bottom:#a1a1a1 1px solid;padding-bottom:10px;outline:none;font-size:1rem;}
+    .sec_login .case_body input[type="password"]{width:100%;margin-top:25px;background:transparent;border:0;border-bottom:#a1a1a1 1px solid;padding-bottom:10px;outline:none;font-size:1rem;}
+    .sec_login .case_body .case_forgot{margin-top:20px;}
+    .sec_login .case_body .case_forgot a.create_account{float:left;font-size:.9rem;color:#FB0131;text-decoration:none;display:none;}
+    .sec_login .case_body .case_forgot a.forgot{float:right;font-size:.9rem;color:#FB0131;text-decoration:none;} 
+    .sec_login .case_body button{padding:12px 15px 12px 15px;}
+    .sec_login .case_body button i{float:left;font-size:1rem;}
+    .sec_login .case_body button.login{margin-top:18px;width:100%;border:0;background:#FB0131;color:#f1f1f1;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_login .case_body button.login:hover,
+    .sec_login .case_body button.cancel_login:hover{background:#e90a37;transition:.5s ease;}
+    .sec_login .case_body button.cancel_login{margin-top:8px;width:100%;border:0;background:#FB0131;color:#f1f1f1;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_login .case_body button.facebook{margin-top:20px;width:100%;border:0;background:#344F88;color:#f1f1f1;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_login .case_body button.facebook:hover{background:#1f3874;transition:.5s ease;}
+    .sec_login .case_body button.google{margin-top:8px;width:100%;border:0;background:#ffffff;color:#141414;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_login .case_body button.google i{color:#4286F5;font-size:1.1rem;}
+    .sec_login .case_body button.google:hover{background:#f5f5f5;transition:.5s ease;}
+
+/* Sign up */
+
+    .sec_sign_up.active{display:block;}
+    .sec_sign_up{position:fixed;top:0;width:100%;z-index:18000;height:100%;background:rgb(0, 0, 0, .6);display:none;}
+    .sec_sign_up .case_body{height:auto;background:#f3f3f3;width:30%;margin:auto;padding:20px 40px 30px 40px;margin-top:80px;border-radius:10px;margin-bottom:50px;animation:login_animation_open .5s ease;} 
+    .sec_sign_up .case_body h2{text-align:center;margin:0;color:#FB0131;margin-bottom:30px;}
+    .sec_sign_up .case_body input[type="text"]{width:100%;margin-bottom:25px;background:transparent;border:0;border-bottom:#a1a1a1 1px solid;padding-bottom:10px;outline:none;font-size:1rem;}
+    .sec_sign_up .case_body input[type="password"]{width:100%;background:transparent;border:0;border-bottom:#a1a1a1 1px solid;padding-bottom:10px;outline:none;font-size:1rem;}
+    .sec_sign_up .case_body .case_forgot{margin-top:20px;}
+    .sec_sign_up .case_body .case_forgot a.terms,
+    .sec_sign_up .case_body .case_forgot a.privacy{color:#FB0131;text-decoration:none;} 
+    .sec_sign_up .case_body button{padding:12px 15px 12px 15px;}
+    .sec_sign_up .case_body button i{float:left;font-size:1rem;}
+    .sec_sign_up .case_body button.signup{width:100%;border:0;background:#FB0131;color:#f1f1f1;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_sign_up .case_body button.signup:hover,
+    .sec_sign_up .case_body button.cancel_signup:hover{background:#e90a37;transition:.5s ease;}
+    .sec_sign_up .case_body button.cancel_signup{margin-top:8px;width:100%;border:0;background:#FB0131;color:#f1f1f1;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_sign_up .case_body button.facebook{margin-top:20px;width:100%;border:0;background:#344F88;color:#f1f1f1;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_sign_up .case_body button.facebook:hover{background:#1f3874;transition:.5s ease;}
+    .sec_sign_up .case_body button.google{margin-top:8px;width:100%;border:0;background:#ffffff;color:#141414;box-shadow:#adadad 0 1px 3px;transition:.5s ease;outline:none;}
+    .sec_sign_up .case_body button.google i{color:#4286F5;font-size:1.1rem;}
+    .sec_sign_up .case_body button.google:hover{background:#f5f5f5;transition:.5s ease;}
+
+
+
 
 
     @media(max-width:855px){
@@ -184,5 +256,10 @@
         footer .body_case .left_box,
         footer .body_case .right_box{width:100%;}
         footer .body_case .right_box{text-align:center;}
+
+        .sec_login .case_body,
+        .sec_sign_up .case_body{width:90%;padding:10px 10px 20px 10px;}
+        .sec_login .case_body .case_forgot a.create_account{display:block;}
+        .sec_sign_up .case_body{margin-top:70px;}
 
     }

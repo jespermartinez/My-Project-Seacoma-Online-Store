@@ -57,7 +57,7 @@
 /* Home Treding Product Slider */
 
     var swiper = new Swiper('.swiper-container_sec_6_trending_search', {
-        slidesPerView: 3,
+        slidesPerView: 2,
         slidesPerColumn: 1,
         spaceBetween: 30,
         pagination: {
